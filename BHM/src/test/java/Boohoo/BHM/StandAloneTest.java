@@ -10,6 +10,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import Boohoo.BHM.pageobjects.HomePage;
 public class StandAloneTest {
 	public static void main(String[] args) {
 		ChromeOptions options = new ChromeOptions();
@@ -22,6 +24,8 @@ public class StandAloneTest {
 		//Home page
 		
 		driver.get("https://storefront:Oreo2022@dwdev.boohooman.com/eu/");
+		
+		HomePage hPage = new HomePage(driver);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("onetrust-accept-btn-handler"))));
 		driver.findElement(By.id("onetrust-accept-btn-handler")).click();
