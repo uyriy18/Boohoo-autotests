@@ -1,4 +1,4 @@
-package Boohoo.BHM;
+package Boohoo.BHM.tests;
 import java.time.Duration;
 
 import org.openqa.selenium.By;

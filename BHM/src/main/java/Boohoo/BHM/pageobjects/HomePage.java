@@ -31,6 +31,10 @@ public class HomePage extends AbstractComponent{
 	@FindBy(linkText = "T-Shirts")   // should be refactored in the same way as navigationMenu
 	WebElement tshirtsCategory;
 	
+	public void goToHomePage() {
+		driver.get("https://storefront:Oreo2022@dwdev.boohooman.com/eu/");
+	}
+	
 	public void acceptCookies() {
 		waitForElementtoAppear(AcceptoneTrustButton);
 		AcceptoneTrustButton.click();
