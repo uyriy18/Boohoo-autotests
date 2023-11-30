@@ -1,25 +1,28 @@
 package Boohoo.BHM.tests;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import Boohoo.BHM.TestComponents.BaseTest;
 import Boohoo.BHM.pageobjects.BillingPage;
 import Boohoo.BHM.pageobjects.CartPage;
 import Boohoo.BHM.pageobjects.CheckoutLoginPage;
 import Boohoo.BHM.pageobjects.ConfirmationPage;
-import Boohoo.BHM.pageobjects.HomePage;
 import Boohoo.BHM.pageobjects.ProductDetailsPage;
 import Boohoo.BHM.pageobjects.ProductListingPage;
 import Boohoo.BHM.pageobjects.ShippingPage;
 
 
 public class GuestOrderPlacementByCardTest extends BaseTest {
-	@Test
-	public void placeOrderGuestCard() throws IOException, InterruptedException  {
+	@Test(dataProvider = "getData", groups = {"GuestUser","Smoke","Regression"})
+	public void placeOrderGuestCard(HashMap<String,String> input) throws IOException, InterruptedException  {
 		
 		//Home page
 		homePage.acceptCookies();
-		homePage.openSubMenu("CLOTHING");
-		ProductListingPage plp = homePage.openSubCategory("T-Shirts");		
+		homePage.openSubMenu(input.get("categoryName"));
+		ProductListingPage plp = homePage.openSubCategory(input.get("subCategoryName"));		
 		//PLP
 		ProductDetailsPage pdp = plp.goToPDP();  // TO-DO : should be added verification if the product has available options
 		//PDP	
@@ -37,10 +40,15 @@ public class GuestOrderPlacementByCardTest extends BaseTest {
 		BillingPage bp = sp.goToBillingPage();
 		//Billing page
 		bp.fillUserEmail();
-		bp.fillCardData("Visa", "4111111111111111", "0330", "737");
+		bp.fillCardData(input.get("cartName"), input.get("cartNumber"), input.get("expDate"), input.get("cvc"));
 		//Confirmation page
-		ConfirmationPage cp = bp.goConfirmationPage();
-		
+		ConfirmationPage cp = bp.goConfirmationPage();		
+	}
+	
+	@DataProvider
+	public Object[][] getData() throws IOException {
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//Boohoo//BHM//data//OrderPlacement.json");			
+		return new Object[][] { {data.get(0)}, {data.get(1)} };
 	}
 	
 

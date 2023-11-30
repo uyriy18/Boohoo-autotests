@@ -28,6 +28,14 @@
 			<version>4.15.0</version>
 		</dependency>
 		<!--
+		https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.16.0</version>
+		</dependency>
+
+		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -42,6 +50,11 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>UdemyAutomation</groupId>
+			<artifactId>ExelDataDrivenImplemintation</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
