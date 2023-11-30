@@ -25,10 +25,7 @@ public class ProductDetailsPage extends AbstractComponent {
 
 	@FindBy(css = "div[class*='size'] .variation-value.selectable:first-child")  // should be refactored by adding dynamic impl. like- find all WebElements put them into List and select one that contains sending Category name
 	WebElement sizeOption;
-	@FindBy(id = "mini-cart")
-	WebElement miniCartIcon;
-	@FindBy(css = ".button.mini-cart-link-cart")
-	WebElement openCartButton;
+
 	
 	By addToCartButton = By.cssSelector("button span[class='add-to-cart-text']");
 	
@@ -41,12 +38,7 @@ public class ProductDetailsPage extends AbstractComponent {
 		driver.findElement(addToCartButton).click();
 	}
 	
-	public CartPage goToCart() {
-		act.moveToElement(miniCartIcon).build().perform();
-		waitForElementtoAppear(openCartButton);
-		openCartButton.click();
-		return new CartPage(driver);
-	}
+	
 			
 	 
 

@@ -1,16 +1,8 @@
 package Boohoo.BHM;
 import java.time.Duration;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import Boohoo.BHM.pageobjects.BillingPage;
 import Boohoo.BHM.pageobjects.CartPage;
 import Boohoo.BHM.pageobjects.CheckoutLoginPage;
@@ -31,12 +23,12 @@ public class GuestOrderPlacementByCardTest {
 		//Home page
 		
 		driver.get("https://storefront:Oreo2022@dwdev.boohooman.com/eu/");
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		Actions act = new Actions(driver);
+
 
 		HomePage hPage = new HomePage(driver);
 		hPage.acceptCookies();
-		ProductListingPage plp = hPage.goToPLP(null, null);
+		hPage.openSubMenu("CLOTHING");
+		ProductListingPage plp = hPage.openSubCategory("T-Shirts");
 		
 		//PLP
 		ProductDetailsPage pdp = plp.goToPDP();  // TO-DO : should be added verification if the product has available options
@@ -44,7 +36,8 @@ public class GuestOrderPlacementByCardTest {
 		
 		pdp.selectProductSize();
 		pdp.addToCart();
-		CartPage cart = pdp.goToCart();
+		pdp.openMiniCart();
+		CartPage cart = pdp.goToCartfromMinicart();
 
 		
 		//Cart
