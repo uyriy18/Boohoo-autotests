@@ -21,12 +21,16 @@ public class CartPage extends AbstractComponent{
 		act = new Actions(driver);
 	}
 
-	@FindBy(css = "button[value='Checkout']")  
+	@FindBy(css = "button[class*='button-fancy-large']")  
 	WebElement goToCOButton;
 	
-	public CheckoutLoginPage goShippingPageAsGuest() {
+	public LoginPage goShippingPageAsGuest() {
 		goToCOButton.click();
-		return new CheckoutLoginPage(driver);		
+		return new LoginPage(driver);		
+	}
+	public ShippingPage goShippingPageAsRegistered() {
+		goToCOButton.click();
+		return new ShippingPage(driver);		
 	}
 
 

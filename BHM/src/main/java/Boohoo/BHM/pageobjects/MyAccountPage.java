@@ -9,25 +9,21 @@ import org.openqa.selenium.support.PageFactory;
 
 import Boohoo.BHM.AbstractComponents.AbstractComponent;
 
-public class CheckoutLoginPage extends AbstractComponent{
+public class MyAccountPage extends AbstractComponent{
 	WebDriver driver;
 	Actions act;
 
 	
-	public CheckoutLoginPage(WebDriver driver) {
+	public MyAccountPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		act = new Actions(driver);
 	}
 
-	@FindBy(css = "button[value='Continue as a guest']")  
-	WebElement goToShippingAsGuestButton;
 	
-	public ShippingPage goShippingPageAsGuest() {
-		goToShippingAsGuestButton.click();
-		return new ShippingPage(driver);		
-	}
+	
+	
 
 
 

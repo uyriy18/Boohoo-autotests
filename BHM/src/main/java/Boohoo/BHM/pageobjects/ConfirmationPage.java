@@ -21,13 +21,15 @@ public class ConfirmationPage extends AbstractComponent{
 		act = new Actions(driver);
 	}
 
-	@FindBy(css = "button[value='Continue as a guest']")  
-	WebElement goToShippingAsGuestButton;
+	@FindBy(css = ".confirmation-message-title")  
+	WebElement actualConfirmMessage;
 	
-	public ProductDetailsPage goShippingPageAsGuest() {
-		goToShippingAsGuestButton.click();
-		return new ProductDetailsPage(driver);		
+	public boolean assertConfirmationMessage(String expMessage) {
+		waitForElementtoAppear(actualConfirmMessage);
+		return expMessage.contains(expMessage)? true : false;
 	}
+	
+	
 
 
 

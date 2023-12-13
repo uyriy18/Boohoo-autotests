@@ -1,0 +1,28 @@
+[
+	{
+                "address1" : "Abbestr. 2-12",
+                "city" : "Berlin",
+                "postal" : "10587",
+		"cartName": "Visa",
+		"cartNumber": "4111111111111111",
+		"expDate": "0330",
+		"cvc": "737",
+                "confirmationMessage": "DANKE FÜR DEINE BESTELLUNG",
+                "country" : "Deutschland",
+                "userEmail1" : "y.bartash+de73@astoundcommerce.com",
+                "userPassword" : "Test1234"
+	},
+	{
+                "address1" : "Abbestr. 2-12",
+                "city" : "Berlin",
+                "postal" : "10587",
+		"cartName": "Master Card",
+		"cartNumber": "5555 3412 4444 1115",
+		"expDate": "0330",
+		"cvc": "737",
+                "confirmationMessage": "DANKE FÜR DEINE BESTELLUNG",
+                "country" : "Deutschland",
+                "userEmail1" : "y.bartash+de73@astoundcommerce.com",
+                "userPassword" : "Test1234"
+	}
+]

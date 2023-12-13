@@ -5,7 +5,7 @@
     <classes>
       <class name="Boohoo.BHM.tests.GuestOrderPlacementByCardTest">
         <methods>
-          <include name="placeOrderGuestCard" invocation-numbers="0 1"/>
+          <include name="placeOrderGuestCard" invocation-numbers="1"/>
           <include name="tearDown"/>
           <include name="lunchWebSite"/>
         </methods>
