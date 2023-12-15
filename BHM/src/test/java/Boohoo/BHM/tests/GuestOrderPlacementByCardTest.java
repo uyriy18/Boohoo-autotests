@@ -1,5 +1,6 @@
 package Boohoo.BHM.tests;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -8,7 +9,9 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.w3c.dom.DOMException;
-
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import Boohoo.BHM.TestComponents.BaseTest;
 import Boohoo.BHM.pageobjects.BillingPage;
 import Boohoo.BHM.pageobjects.CartPage;
@@ -57,5 +60,7 @@ public class GuestOrderPlacementByCardTest extends BaseTest {
 				System.getProperty("user.dir") + "//src//test//java//Boohoo//BHM//data//DE-OrderPlacement.json");
 		return new Object[][] { { data.get(0) }, { data.get(1) } };
 	}
+	
+	
 
 }

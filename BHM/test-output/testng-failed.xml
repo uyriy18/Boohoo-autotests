@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Boohoo.BHM.tests.GuestOrderPlacementByCardTest">
+      <class name="Boohoo.BHM.tests.RegistredBySavedCCSavedAddress">
         <methods>
-          <include name="placeOrderGuestCard" invocation-numbers="1"/>
           <include name="tearDown"/>
+          <include name="placeOrderGuestCard" invocation-numbers="1"/>
           <include name="lunchWebSite"/>
         </methods>
-      </class> <!-- Boohoo.BHM.tests.GuestOrderPlacementByCardTest -->
+      </class> <!-- Boohoo.BHM.tests.RegistredBySavedCCSavedAddress -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

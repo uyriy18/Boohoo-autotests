@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,6 +20,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.apache.commons.io.FileUtils;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -64,6 +68,7 @@ public class BaseTest {
 	public void tearDown() {
 		driver.close();
 	}
+	
 	public List<HashMap<String, String>> getJsonDataToMap(String fileSRC) throws IOException {
 		String jsonContent = FileUtils.readFileToString(new File(fileSRC), StandardCharsets.UTF_8);
 		ObjectMapper mapper = new ObjectMapper();
@@ -72,6 +77,18 @@ public class BaseTest {
 				});
 		return data;
 	}
+	
+	
+	
+	public String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		File file = new File(System.getProperty("user.dir") + "//Reports/" + testCaseName + ".png");
+		FileUtils.copyFile(source, file);
+		return System.getProperty("user.dir") + "//Reports//" + testCaseName + ".png";
+	}
+	
+
 
 
 }
