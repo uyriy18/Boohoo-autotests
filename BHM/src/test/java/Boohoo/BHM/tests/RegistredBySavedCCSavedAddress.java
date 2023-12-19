@@ -21,7 +21,6 @@ public class RegistredBySavedCCSavedAddress extends BaseTest {
 	//	homePage.openSubMenu();
 		LoginPage lp = homePage.goToLoginPage();
 		MyAccountPage ma = lp.userLogin(input.get("userEmail1"), input.get("userPassword"));
-		Assert.assertTrue(false);
 		ma.openSubMenu();
 		ProductListingPage plp = ma.openSubCategory();
 		// PLP

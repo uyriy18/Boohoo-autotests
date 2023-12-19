@@ -41,7 +41,7 @@ public class LoginPage extends AbstractComponent{
 		userEmail.sendKeys(email);
 		userPassword.sendKeys(password);
 		LogInButton.click();
-		//waitForURLAppear("myaccount");
+		waitForURLAppear("myaccount");
 		return new MyAccountPage(driver);
 		
 	}

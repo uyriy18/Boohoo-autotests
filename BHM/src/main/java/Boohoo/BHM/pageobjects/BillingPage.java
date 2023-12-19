@@ -82,11 +82,11 @@ public class BillingPage extends AbstractComponent{
 		PayPalButton.click();
 	}
 	
-	public void selectSavedCard(String cardName, String cardCvc) {
+	public void selectSavedCard(String cardName, String cardCvc) throws InterruptedException {
 		Select cartSelector = new Select(cardDropdown);
 		String card = availableCards.stream().filter(x -> x.getText().contains(cardName)).findFirst().orElse(null).getText();		
 		cartSelector.selectByVisibleText(card);
-		waitForElementtoAppear(cardCvcInput.get(1));		
+		Thread.sleep(500);	
 		act.moveToElement(cardCvcInput.get(1)).click().sendKeys(cardCvc).build().perform();
 	}
 	public ConfirmationPage placeOrderByPayPal(){		
