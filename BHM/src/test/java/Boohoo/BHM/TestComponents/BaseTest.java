@@ -31,6 +31,7 @@ import Boohoo.BHM.pageobjects.HomePage;
 public class BaseTest {
 	protected WebDriver driver;
 	protected HomePage homePage;
+	String country;
 	
 	public WebDriver initializeDriver() throws IOException {
 
@@ -39,6 +40,7 @@ public class BaseTest {
 				System.getProperty("user.dir") + "//src//main//java//Boohoo//BHM//resourses//GlobalData.properties");
 		prop.load(fis);
 		String browserName = prop.getProperty("browser");
+		country = prop.getProperty("country");
 		if (browserName.equalsIgnoreCase("chrome")) {
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("start-maximized");

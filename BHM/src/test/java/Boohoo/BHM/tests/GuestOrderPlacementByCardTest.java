@@ -28,6 +28,7 @@ public class GuestOrderPlacementByCardTest extends BaseTest {
 
 		// Home page
 		homePage.acceptCookies();
+		homePage.goToLocale(input.get("url"));
 		homePage.openSubMenu();
 		ProductListingPage plp = homePage.openSubCategory();
 		// PLP

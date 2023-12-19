@@ -43,25 +43,31 @@ public class AbstractComponent {
 	@FindBy(css = ".button.mini-cart-link-cart")
 	WebElement openCartButton;
 
-
 	@FindBy(css = "#navigation li[class*='has-submenu']:nth-child(1)")
 	WebElement subMenuItems;
 	@FindBy(css = "#navigation li[class*='has-submenu']:nth-child(1) div[class='level-2'] ul[class*='vertical']:nth-child(3) a")
 	WebElement subCategories;
-	@FindBy(css=".is-mobile.user-account")
+	@FindBy(css = ".is-mobile.user-account")
 	WebElement myAccountIcon;
-	@FindBy(css=".user-link-item:first-of-type")
+	@FindBy(css = ".user-link-item:first-of-type")
 	WebElement logInButton;
-	@FindBy(css=".user-link-item:last-of-type")
+	@FindBy(css = ".user-link-item:last-of-type")
 	WebElement registerButton;
+	@FindBy(css = ".country-selector")
+	WebElement countrySelector;
+	@FindBy(css = "div[class = 'selector'] .country a")
+	List<WebElement> countries;
+
+	
 
 	public void openChildWindow() {
-	    parrentWindow = it.next();
-		if(it.hasNext()) {
+		parrentWindow = it.next();
+		if (it.hasNext()) {
 			childWindow = it.next();
 		}
 		driver.switchTo().window(childWindow);
 	}
+
 	public void openParrentWindow() {
 		driver.switchTo().window(parrentWindow);
 	}
@@ -71,7 +77,7 @@ public class AbstractComponent {
 		Thread.sleep(500);
 	}
 
-	public ProductListingPage openSubCategory() { 
+	public ProductListingPage openSubCategory() {
 		subCategories.click();
 		return new ProductListingPage(driver);
 	}
@@ -90,7 +96,7 @@ public class AbstractComponent {
 		openCartButton.click();
 		return new CartPage(driver);
 	}
-	
+
 	public LoginPage goToLoginPage() {
 		myAccountIcon.click();
 		waitForElementtoAppear(logInButton);
@@ -117,6 +123,5 @@ public class AbstractComponent {
 	public void waitForURLAppear(String url) {
 		wait.until(ExpectedConditions.urlContains(url));
 	}
-
 
 }

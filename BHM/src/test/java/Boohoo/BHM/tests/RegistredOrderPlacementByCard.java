@@ -23,6 +23,7 @@ public class RegistredOrderPlacementByCard extends BaseTest {
 
 		// Home page
 		homePage.acceptCookies();
+		homePage.goToLocale(input.get("url"));
 		homePage.openSubMenu();
 		LoginPage lp = homePage.goToLoginPage();
 		MyAccountPage ma = lp.userLogin("y.bartash+r73@astoundcommerce.com", "Test1234");

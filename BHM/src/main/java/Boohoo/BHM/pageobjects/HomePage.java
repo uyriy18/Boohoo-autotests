@@ -32,9 +32,11 @@ public class HomePage extends AbstractComponent{
 	WebElement tshirtsCategory;
 	
 	public void goToHomePage() {
-		driver.get("https://storefront:Oreo2022@dwdev.boohooman.com/eu/");
+		driver.get("https://storefront:Oreo2022@dwdev.boohooman.com");
 	}
-	
+	public void goToLocale(String url) {
+		driver.get(url);
+	}
 	public void acceptCookies() {
 		waitForElementtoAppear(AcceptoneTrustButton);
 		AcceptoneTrustButton.click();

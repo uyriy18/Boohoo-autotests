@@ -18,7 +18,7 @@ public class RegistredBySavedCCSavedAddress extends BaseTest {
 
 		// Home page
 		homePage.acceptCookies();
-	//	homePage.openSubMenu();
+		homePage.goToLocale(input.get("url"));
 		LoginPage lp = homePage.goToLoginPage();
 		MyAccountPage ma = lp.userLogin(input.get("userEmail1"), input.get("userPassword"));
 		ma.openSubMenu();
