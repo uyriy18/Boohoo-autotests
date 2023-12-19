@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import Boohoo.BHM.AbstractComponents.AbstractComponent;
 
 public class HomePage extends AbstractComponent{
-	WebDriver driver;
+	private WebDriver driver;
 	Actions act;
 	WebDriverWait wait;
 

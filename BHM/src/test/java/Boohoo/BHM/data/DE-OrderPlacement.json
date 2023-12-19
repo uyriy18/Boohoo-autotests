@@ -11,13 +11,14 @@
                 "country" : "Deutschland",
                 "userEmail1" : "y.bartash+de73@astoundcommerce.com",
                 "userPassword" : "Test1234"
-	},
+	}
+,
 	{
                 "address1" : "Abbestr. 2-12",
                 "city" : "Berlin",
                 "postal" : "10587",
 		"cartName": "Master Card",
-		"cartNumber": "5555 3412 4444 1115",
+		"cartNumber": "5555341244441115",
 		"expDate": "0330",
 		"cvc": "737",
                 "confirmationMessage": "DANKE FÜR DEINE BESTELLUNG",

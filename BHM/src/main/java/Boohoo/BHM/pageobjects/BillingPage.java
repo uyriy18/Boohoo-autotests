@@ -84,8 +84,9 @@ public class BillingPage extends AbstractComponent{
 	
 	public void selectSavedCard(String cardName, String cardCvc) {
 		Select cartSelector = new Select(cardDropdown);
-		String card = availableCards.stream().filter(x -> x.getText().contains(cardName)).findFirst().orElse(null).getText();
+		String card = availableCards.stream().filter(x -> x.getText().contains(cardName)).findFirst().orElse(null).getText();		
 		cartSelector.selectByVisibleText(card);
+		waitForElementtoAppear(cardCvcInput.get(1));		
 		act.moveToElement(cardCvcInput.get(1)).click().sendKeys(cardCvc).build().perform();
 	}
 	public ConfirmationPage placeOrderByPayPal(){		

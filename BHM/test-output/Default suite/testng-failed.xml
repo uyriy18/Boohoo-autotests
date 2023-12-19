@@ -6,7 +6,7 @@
       <class name="Boohoo.BHM.tests.RegistredBySavedCCSavedAddress">
         <methods>
           <include name="tearDown"/>
-          <include name="placeOrderGuestCard" invocation-numbers="1"/>
+          <include name="placeOrderGuestCard" invocation-numbers="0 1"/>
           <include name="lunchWebSite"/>
         </methods>
       </class> <!-- Boohoo.BHM.tests.RegistredBySavedCCSavedAddress -->

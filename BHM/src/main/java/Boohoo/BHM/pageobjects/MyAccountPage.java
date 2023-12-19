@@ -20,6 +20,7 @@ public class MyAccountPage extends AbstractComponent{
 		PageFactory.initElements(driver, this);
 		act = new Actions(driver);
 	}
+	
 
 	
 	

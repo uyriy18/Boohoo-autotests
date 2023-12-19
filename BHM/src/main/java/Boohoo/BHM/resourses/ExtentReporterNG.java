@@ -7,7 +7,7 @@ public class ExtentReporterNG {
 	
 
 	public static ExtentReports reportCreator() {
-		String path = System.getProperty("user.dir") + "//Reports/index.html";
+		String path = System.getProperty("user.dir") + "\\Reports\\index.html";
 		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
 		reporter.config().setReportName("Boohoo Web Automation");
 		reporter.config().setDocumentTitle("Boohoo Test Results");

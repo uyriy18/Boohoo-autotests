@@ -18,6 +18,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.apache.commons.io.FileUtils;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -28,7 +29,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import Boohoo.BHM.pageobjects.HomePage;
 
 public class BaseTest {
-	WebDriver driver;
+	protected WebDriver driver;
 	protected HomePage homePage;
 	
 	public WebDriver initializeDriver() throws IOException {
@@ -58,7 +59,7 @@ public class BaseTest {
 	
 	@BeforeMethod
 	public HomePage lunchWebSite() throws IOException {
-		WebDriver driver = initializeDriver();
+	    driver = initializeDriver();
 		homePage = new HomePage(driver);
 		homePage.goToHomePage();
 		return homePage;
@@ -66,7 +67,7 @@ public class BaseTest {
 	
 	@AfterMethod
 	public void tearDown() {
-		driver.close();
+		driver.quit();
 	}
 	
 	public List<HashMap<String, String>> getJsonDataToMap(String fileSRC) throws IOException {
@@ -88,7 +89,12 @@ public class BaseTest {
 		return System.getProperty("user.dir") + "//Reports//" + testCaseName + ".png";
 	}
 	
-
+	@DataProvider
+	public Object[][] getData() throws IOException {
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				System.getProperty("user.dir") + "//src//test//java//Boohoo//BHM//data//DE-OrderPlacement.json");
+		return new Object[][] { { data.get(0) }, { data.get(1) } };
+	}
 
 
 }
