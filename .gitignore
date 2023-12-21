@@ -159,3 +159,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+# Reports in BHM
+
+BHM/Reports/
+BHM/test-output/
