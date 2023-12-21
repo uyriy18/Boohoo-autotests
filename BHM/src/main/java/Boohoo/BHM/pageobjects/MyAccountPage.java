@@ -12,6 +12,10 @@ import Boohoo.BHM.AbstractComponents.AbstractComponent;
 public class MyAccountPage extends AbstractComponent{
 	WebDriver driver;
 	Actions act;
+	@FindBy(css="div[class='account-nav-item']:first-of-type li:nth-child(3) a")
+	WebElement Addresses;
+	@FindBy(css="div[class='account-nav-item']:first-of-type li:nth-child(4) a")
+	WebElement PaymentDetails;
 
 	
 	public MyAccountPage(WebDriver driver) {
@@ -21,6 +25,11 @@ public class MyAccountPage extends AbstractComponent{
 		act = new Actions(driver);
 	}
 	
+	public MA_Wallet goToWalletPage() {
+		PaymentDetails.click();
+		return new MA_Wallet(driver);
+		
+	}
 
 	
 	

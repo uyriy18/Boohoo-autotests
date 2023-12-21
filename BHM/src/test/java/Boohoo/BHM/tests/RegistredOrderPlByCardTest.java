@@ -17,7 +17,7 @@ import Boohoo.BHM.pageobjects.MyAccountPage;
 import Boohoo.BHM.pageobjects.ProductDetailsPage;
 import Boohoo.BHM.pageobjects.ProductListingPage;
 import Boohoo.BHM.pageobjects.ShippingPage;
-public class RegistredOrderPlacementByCard extends BaseTest {
+public class RegistredOrderPlByCardTest extends BaseTest {
 	@Test(dataProvider = "getData", groups = { "GuestUser", "Smoke", "Regression" })
 	public void placeOrderGuestCard(HashMap<String, String> input) throws IOException, InterruptedException {
 

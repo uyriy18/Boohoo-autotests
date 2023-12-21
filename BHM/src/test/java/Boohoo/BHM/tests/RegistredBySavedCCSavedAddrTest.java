@@ -12,7 +12,7 @@ import Boohoo.BHM.pageobjects.MyAccountPage;
 import Boohoo.BHM.pageobjects.ProductDetailsPage;
 import Boohoo.BHM.pageobjects.ProductListingPage;
 import Boohoo.BHM.pageobjects.ShippingPage;
-public class RegistredBySavedCCSavedAddress extends BaseTest {
+public class RegistredBySavedCCSavedAddrTest extends BaseTest {
 	@Test(dataProvider = "getData", groups = { "GuestUser", "Smoke", "Regression" })
 	public void placeOrderRegestredCard(HashMap<String, String> input) throws IOException, InterruptedException {
 
