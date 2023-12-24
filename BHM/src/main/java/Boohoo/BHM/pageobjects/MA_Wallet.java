@@ -15,6 +15,8 @@ import Boohoo.BHM.AbstractComponents.AbstractComponent;
 public class MA_Wallet extends MyAccountPage{
 	WebDriver driver;
 	Actions act;
+	private static int initialCardsNumber;
+
 	
 @FindBy (css=".add-card.button")
 WebElement addCartBtn;
@@ -37,6 +39,7 @@ WebElement submitBtn;
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		act = new Actions(driver);
+		initialCardsNumber = cards.size();
 	}
 	
 	public void addNewCard(String cartName, String cardNumber, String cardExpDate, String cardCvc) {
@@ -47,10 +50,15 @@ WebElement submitBtn;
 		act.moveToElement(cardExpDateInput).click().sendKeys(cardExpDate).build().perform();
 		act.moveToElement(cardCvcInput).click().sendKeys(cardCvc).build().perform();
 		submitBtn.click();
+		waitForElementtoAppear(cards.get(cards.size()-1));
 	}
 	public void removeCard () {
 		cards.get(cards.size()-1).findElement(By.cssSelector("button[class*='button-delete']")).click();
 		driver.switchTo().alert().accept();
+		waitForElementtoDisappear(cards.get(cards.size()-1));
+	}
+	public boolean checkCardsNumber() {
+		return initialCardsNumber == cards.size();
 	}
 	
 

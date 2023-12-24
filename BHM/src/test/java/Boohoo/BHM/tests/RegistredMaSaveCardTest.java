@@ -25,8 +25,7 @@ public class RegistredMaSaveCardTest extends BaseTest {
 		MA_Wallet wallet = ma.goToWalletPage();
 		wallet.addNewCard(input.get("cartName"), input.get("cartNumber"), input.get("expDate"), input.get("cvc"));
 		wallet.removeCard();
-		Thread.sleep(5000);
-	
+		Assert.assertTrue(wallet.checkCardsNumber());	
 	}
 
 

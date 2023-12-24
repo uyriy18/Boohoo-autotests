@@ -8,19 +8,24 @@
 	<test thread-count="5"
 		name="Registred User without saved cads and addresses">
 		<classes>
-			<class name="Boohoo.BHM.tests.RegistredOrderPlacementByCard" />
+			<class name="Boohoo.BHM.tests.RegistredOrderPlByCardTest" />
 		</classes>
 	</test>
 	<test name="Registred user with saved cards and addresses">
 		<classes>
-			<class name="Boohoo.BHM.tests.RegistredBySavedCCSavedAddress" />
+			<class name="Boohoo.BHM.tests.RegistredBySavedCCSavedAddrTest" />
 		</classes>
 	</test>
 	<test name="Guest user by Credit card">
 		<classes>
 			<class name="Boohoo.BHM.tests.GuestOrderPlacementByCardTest" />
 		</classes>
-	</test><!--
-	Test -->
+	</test>
+	<test name="Save and remove CC in MA/Wallet">
+		<classes>
+			<class name="Boohoo.BHM.tests.RegistredMaSaveCardTest" />
+		</classes>
+	</test>
+	<!--Test -->
 </suite> <!--
 Suite -->
